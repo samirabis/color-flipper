@@ -156,6 +156,7 @@ const hexConv = document.querySelector('.hexConv');
 
 let randomNumber = 0;
 let numberArray = [];
+let counter = [];
 
 btn.addEventListener('click', function () {
   // get random number betweeN 0 - 3
@@ -167,22 +168,33 @@ btn.addEventListener('click', function () {
   // add randomNumber to array
   numberArray.push(randomNumber);
   // if array length is greater than 2, remove first element
-  if (numberArray.length > 2) {
+  if (numberArray.length > 10) {
     numberArray.shift();
   }
+  counter = numberArray.length;
   console.log(numberArray);
 });
 
 backBtn.addEventListener('click', function () {
-  document.body.style.backgroundColor = colors[numberArray[0]];
-  color.textContent = colors[numberArray[0]];
-  hexConv.textContent = colorToHex(colors[numberArray[0]]);
+  // if pressed, goes back to previous array value
+  if (numberArray.length > 1 && counter > 1) {
+    counter--;
+    document.body.style.backgroundColor = colors[numberArray[counter - 1]];
+    color.textContent = colors[numberArray[counter - 1]];
+    hexConv.textContent = colorToHex(colors[numberArray[counter - 1]]);
+  }
+  console.log(counter);
 });
 
 forwardBtn.addEventListener('click', function () {
-  document.body.style.backgroundColor = colors[numberArray[1]];
-  color.textContent = colors[numberArray[1]];
-  hexConv.textContent = colorToHex(colors[numberArray[1]]);
+  // if pressed, goes forward to next array value
+  if (numberArray.length > 1 && counter != numberArray.length) {
+    counter++;
+    document.body.style.backgroundColor = colors[numberArray[counter - 1]];
+    color.textContent = colors[numberArray[counter - 1]];
+    hexConv.textContent = colorToHex(colors[numberArray[counter - 1]]);
+  }
+  console.log(counter);
 });
 
 function getRandomNumber() {
