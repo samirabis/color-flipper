@@ -159,7 +159,7 @@ let numberArray = [];
 let counter = [];
 
 btn.addEventListener('click', function () {
-  // get random number betweeN 0 - 3
+  // get random number between 0 - 3
   randomNumber = getRandomNumber();
   console.log(randomNumber);
   document.body.style.backgroundColor = colors[randomNumber];
@@ -188,7 +188,7 @@ backBtn.addEventListener('click', function () {
 
 forwardBtn.addEventListener('click', function () {
   // if pressed, goes forward to next array value
-  if (numberArray.length > 1 && counter != numberArray.length) {
+  if (numberArray.length > 1 && counter < numberArray.length) {
     counter++;
     document.body.style.backgroundColor = colors[numberArray[counter - 1]];
     color.textContent = colors[numberArray[counter - 1]];

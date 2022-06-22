@@ -105,6 +105,10 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+footer {
+  background: var(--clr-grey-10);
+  padding: var(--spacing) var(--spacing) var(--spacing) var(--spacing);
+}
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -238,4 +242,10 @@ main {
 .btn-hero:hover {
   color: var(--clr-white);
   background: var(--clr-black);
+}
+
+.copy {
+  font-size: 0.75rem;
+  color: var(--clr-grey-5);
+  margin-top: 1rem;
 }
